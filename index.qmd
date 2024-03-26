@@ -8,7 +8,7 @@ format:
      - style.scss
    toc: true
    toc-location: left
-   toc-depth: 3
+   toc-depth: 4
    toc-title: "Contents"
 filters: 
   - pyodide
@@ -541,5 +541,62 @@ Pandas is well suited for:
 ``` {python}
 # To install use !pip install pandas -U
 import pandas as pd
+```
+
+### Pandas Data Structures
+#### Series
+The first pandas data structure is a Series. A Series is a one-dimensional array that can hold any
+datatype, similar to a ndarray. However, a Series has an index that gives a label to each entry.
+An index generally is used to label the data.
+Typically a Series contains information about one feature of the data. For example, the data
+in a Series might show a class’s grades on a test and the Index would indicate each student in the
+class. To initialize a Series, the first parameter is the data and the second is the index.
+
+```{python}
+import pandas as pd
+import numpy as np
+# let's initialize Series of student grades
+math = pd.Series(np.random.randint(0,100,4),['Alisha','Monica','Joseph','Eva'])
+english = pd.Series(np.random.randint(0,100,5),['Alisha','Monica','Yusuf','Eva', 'Gia'])
+print(math, "/n")
+english #everytime you run you will get a different random numbers becuase of the randint function
+```
+
+We created a random series with labels(here names) which can be used to find the specific values like the following case
+```{python}
+print(math['Eva']) 
+english['Alisha']
+```
+
+Use `.index` to find the labels of the data
+``` {python}
+english.index
+```
+
+***Remember for loops!*** They can be utilized to identify students whose names ends with the letter A
+```{python}
+a = [name.endswith('a') for name in english.index] #only shows true and false
+print(a) 
+english[[name.endswith('a') for name in english.index]] #for extraction use this one
+```
+
+#### Dataframe
+The second key pandas data structure is a `DataFrame`. A `DataFrame` is a collection of multiple
+Series. It can be thought of as a 2-dimensional array, where each row is a separate datapoint and
+each column is a feature of the data. The rows are labeled with an index (as in a Series) and the
+columns are labeled in the attribute columns.
+
+``` {python}
+grades = pd.DataFrame({"Math": math, "English":english})
+grades
+```
+
+```{python}
+grades.columns
+```
+
+```{python}
+b = grades.dropna()
+b
 ```
 
