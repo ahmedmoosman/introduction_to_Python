@@ -1,6 +1,6 @@
-# A Gentle introduction to Python
+# A Gentle Introduction to Python
 
-Introduction to Data Science course by [**Ahmed M.Osman**](https://ahmedmoosman.github.io/)
+For introduction to Data Science course by [**Ahmed M.Osman**](https://ahmedmoosman.github.io/)
 
 ## **Work in Progress**
 <p align="center"> 
