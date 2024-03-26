@@ -4,4 +4,3 @@ Introduction to Data Science course by [**Ahmed M.Osman**](https://ahmedmoosman.
 
 ## **Work in Progress**
 
-![](Images/workinprogress.png){fig-align="center" width="7cm"}
