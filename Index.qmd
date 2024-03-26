@@ -1,0 +1,545 @@
+---
+title: "A Gentle Introduction to Python"
+author: "Ahmed Osman"
+date: "01/24/2024"
+format: 
+  html:
+   theme: 
+     - style.scss
+   toc: true
+   toc-location: left
+   toc-depth: 3
+   toc-title: "Contents"
+filters: 
+  - pyodide
+jupyter: python3
+---
+
+# Introduction
+
+Economist widely used **`STATA`** for the last 30 years to analyse economic data. Whether they are researching school selection, minimum wage, GDP, or stock trends, Stata provides all the statistics, graphics, and data-management tools needed to pursue a broad range of economic questions.
+
+**`Python`** is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as `C++` or `Java`. The language provides constructs intended to enable clear programs on both a small and large scale.
+
+The core philosophy of the language is summarized by the document “PEP 20 (The Zen of Python)” as:
+
+-   Beautiful is better than ugly
+-   Explicit is better than implicit
+-   Simple is better than complex Complex is better than complicated
+-   Readability counts
+
+**`Python`** is compact and readable. Programs written in Python are typically much shorter than equivalent `C`, `C++`, or `Java` programs. Python is extensible: if you know how to program in `C`, it is easy to add a new built-in function or module to the interpreter, either to perform critical operations at maximum speed.
+
+### Why we should use Python?
+
+-   Open source!
+-   Easy to learn and use with no programing experiences.
+-   Rich ecosystem for modeling and data analysis
+
+### Fun fact!
+
+The language is named after the BBC show ***Monty Python’s Flying Circus*** (1969-1974) and has nothing to do with reptiles.
+
+### Python modules
+
+-   **`Python`** has a large standard library, commonly cited as one of Python’s greatest strengths, providing tools suited to many tasks.
+-   The standard library is not essential to run Python or embed `Python` within an application.
+-   [Python package Index (PyPI)](https://py-pkgs.org/01-introduction.html), the official repository for third-party `Python` software, contains over 350,000 packages with a wide range of functionality.
+-   Notable applications: web scraping, scientific computing, text processing, image processing.
+
+### What this course is not about?
+
+This is a short introduction to Python for course of data science for economists. Topics that will not be discussed in this course are:
+
+-   Package developing
+-   Efficient coding (partly, we will discuss reproducibility)
+-   Web development
+-   Geospatial analysis
+
+#### Recommended books while following this course:
+
+-   **Learning Python**, 5th Edition by Mark Lutz,
+-   **Python Crash Course**, 2nd Edition by Eric Matthes,
+-   **Python Data Science Handbook** by Jake VanderPlas,
+-   **Python for Data Analysis**, 2nd Edition by Wes McKinney,
+-   **Python for Finance**, 2nd Edition by Yves Hilpisch.
+
+# Python from scratch
+
+### Installing Python
+
+-   Python is free software.
+-   On Windows and Mac, [Anaconda](https://www.anaconda.com/) is the easiest way to perform `Python` data science and machine learning on a single machine.
+-   To install Python on other systems, check out the [Python Setup and Usage section in Python help documentation](https://docs.python.org/3.9/using/index.html).
+
+### Python scripts
+
+let's start with the most basic code humans ever made:
+
+```{python}
+print("Hello World!")
+print("hello \n World!") #save this script as a hello.py file
+```
+
+to run a python file in **CMD** type the following (But remember our Git/Shell class):
+
+```{CMD}
+  $python hello.py
+```
+
+Bravo{{< iconify exploding-head >}} you made your first **`Python`** program.
+
+#### Basics
+
+```{python}
+5+5
+```
+
+```{python}
+10-5
+```
+
+```{python}
+25/5
+```
+
+```{python}
+(1+4)*6
+```
+
+```{python}
+x = 2024
+print(x)
+y = "I love Pizza"
+print(y)
+```
+
+comment is made with the #. **`Python`** ignores everything in a line that follows a #. let's practice making comments
+
+```{python}
+i = 26 #Assigned the value 26 to variable i
+j = 13
+# we can add them
+i+j
+j-i
+i/j
+```
+
+#### Strings
+
+Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result.
+
+```{python}
+FirstName = " Ahmed" #leave 1 space to make it fancy
+LastName = "Osman"
+FullName = LastName + FirstName
+print(FirstName)
+print(LastName)
+print(FullName)
+```
+
+`len()` is a builtin function in python that returns the length of string.
+
+```{python}
+print(len(FullName))
+```
+
+Two or more string literals (i.e. the ones enclosed between quotes) next to each other are automatically concatenated. This feature is particularly useful when you want to break long strings:
+
+```{python}
+"Ahmed" " Osman"
+
+```
+
+Or add letters to form a word like the following:
+
+```{python}
+"A"+"h"+"m"+"e"+"d"
+```
+
+#### Lists
+
+Python includes various compound data types for grouping together other values. Among these, the list stands out as the most flexible. It is represented by square brackets enclosing comma-separated values (items). Lists can comprise items of varying types, although typically, items within a list share the same type.
+
+```{python}
+values = [1,5,7,9,12]
+print(values)
+print(len(values))
+print(values[0]) #remember [[]] case of R
+```
+
+Lists are a mutable type, i.e. it is possible to change their content:
+
+```{python}
+values[2]=100
+values
+```
+
+You can also add new items at the end of the list, by using the append() method
+
+```{python}
+values.append(15)
+values
+```
+
+# More Python Concepts
+
+## Functions
+
+The **`Python`** interpreter incorporates a variety of built-in functions that are consistently accessible. These functions are presented here in alphabetical order. You can use the help() function, for example help(abs), to access detailed information about a specific function.
+
+```{python}
+#| echo: false
+"abs() aiter() all() any() anext() ascii() bin() bool() breakpoint() bytearray() bytes() callable() chr() classmethod() compile() complex() delattr() dict() dir() divmod() enumerate() eval() exec() filter() float() format() frozenset() getattr() globals() hasattr() hash() help() hex() id() input() int() isinstance() issubclass() iter() len() list() locals() map() max() memoryview() min() next() object() oct() open() ord() pow() print() property() range() repr() reversed() round() set() setattr() slice() sorted() staticmethod() str() sum() super() tuple() type() vars() zip() __import__()"
+```
+
+-   We can create a function that writes the Fibonacci series to an arbitrary boundary.
+-   The function should also include a proper help with the `docstring`
+    -   The first line should always be a short, concise summary of the object's purpose.
+    -   If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description.
+    -   The following lines should be one or more paragraphs describing the object's calling conventions, its side effects, etc.
+
+```{python}
+# 0, 1, 1, 2, 3, 5,
+def fib(n):    # write Fibonacci series up to n
+    """Print a Fibonacci series up to n.
+    
+    par n: integer
+    out  : list
+    """ # the function help
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        #  better than print(a), why?
+        a, b = b, a+b
+```
+
+```{python}
+help(fib)
+```
+
+```{python}
+fib(4)
+```
+
+Generally Functions are structured like:
+
+```{python}
+def function_name(inputs):
+    # step 1
+    # step 2
+    # ...
+    return outputs
+```
+
+```{python}
+def mean(numbers):
+    total = sum(numbers)
+    N = len(numbers)
+    answer = total / N
+
+    return answer
+
+x = [1,2,3,4,5,6]
+print(mean(x))
+```
+
+If we save the function to a file named mycollections.py, we could import the function as follows:
+
+```{python}
+import mycollections
+mycollections.fib(200)
+
+from mycollections import fib
+fib(2)
+```
+
+### Example from economics
+
+Production functions are valuable tools for representing the economic activities of firms generating goods or the total output within an economy. Despite using the term "function" in a mathematical context, we will closely link the conceptualization of mathematical functions with the implementation of Python functions. 
+$$
+Y=F(K,L)
+$$
+
+Cobb-Douglas production functions can help us understand how to create Python functions and why they are useful.
+
+$$
+Y=zK^\alpha L^{1-\alpha}
+$$
+
+The function is parameterized by:
+
+-   A parameter $\alpha$ $\large \epsilon$\[0,1\], called the **“output elasticity of capital”**.
+-   A value $z$ called the **Total Factor Productivity (TFP)**.
+
+Now let's define the Cobb-Douglas function which computes the output production with parameters $z$=1 and $\alpha$=0.33 and takes the input $K$ and $L$:
+
+```{python}
+def cobb_douglas(K,L):
+  #create alpha and z
+  z=1
+  alpha=0.33
+  return z*K**alpha*L**(1-alpha)
+```
+
+Now we can use this function and do the computations as fellow:
+
+
+```{python}
+cobb_douglas(1.0,0.5)
+```
+
+**Now, Your turn**: Define a function that compares two Cobb-Douglas functions and returns the ratio between the two production functions.
+
+$$
+Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
+$$
+
+***Hint*** : Use the same function to calculate all the functions.
+
+```{pyodide-python}
+def cobb_douglas(K,L):
+  #create alpha and z
+  z=1
+  alpha=0.33
+  return z*K**alpha*L**(1-alpha)
+```
+
+**Solution**:
+
+```{python}
+#| echo: true
+#| code-fold: true
+def ratio_CD (K, L, gamma):
+  y1 = cobb_douglas(K,L)
+  y2 = cobb_douglas(gamma*K,gamma*L)
+  y_ratio = y2/y1
+  return y_ratio/gamma
+
+print(ratio_CD(1,0.5,2))
+```
+
+## Iteration
+
+Types in Iterations in Python:
+
+-   **While Loop** --\> A condition-based iteration
+-   **For Loop** --\> An iteration technique that traverses through iterable objects
+-   **Recursion** --\> a programming technique where a function calls itself to solve a problem by breaking it down into smaller instances of the same problem.
+
+Before jumping into iteration let's see how the if statements are computes in **`Python`**.
+
+```{python}
+# if condition
+    # code to run when condition is True
+#else
+    # code to run if no conditions above are True
+    #return or print somethin
+
+if (1<2) is True:
+  print(" 1 is less than 2")    
+```
+
+Suppose we wanted to print out the first 10 integers and their squares. we could do somethings like this.
+
+```{python}
+print(f"1**2={1**2}")
+print(f"2**2={2**2}")
+print(f"3**2={3**2}")
+print(f"4**2={4**2}")
+print(f"5**2={5**2}")
+print(f"6**2={6**2}")
+```
+
+For loops can the same and with less coding efforts.
+
+```{python}
+for i in range(1,11):
+  print(f"{i}**2={i**2}")
+```
+
+```{python}
+# for item in iterable:
+   # operation 1 with item
+   # operation 2 with item
+   # ...
+   # operation N with item
+
+```
+
+While loops:
+
+```{python}
+i = 0
+while i < 3:
+    print(i)
+    i = i + 1
+print("done")
+```
+
+Suppose we wanted to know the smallest `N` such that $\sum_{i=0}^{N}{i>1000}$
+
+```{python}
+total = 0
+i = 0
+while total <= 1000:
+    i = i + 1
+    total = total + i
+
+print("The answer is", i)
+```
+
+This takes us to more technical stuffs like data analysis and statistical modelling using both buil-in functions and libraries. Libraries offer a more efficient way of using python as they are fast executable. *`Pandas`* and *`NumPy`* are most frequent-used and well-know libraries that used in **`Python`**.
+
+# Data Analysis
+
+## NumPy Arrays
+
+*`NumPy`* is a powerful Python package for manipulating data with multi-dimensional vectors. Its versatility and speed makes Python an ideal language for applied and computational mathematics. *`NumPy`*’s core contribution is a new data-type called an *array*. An array is similar to a list, but numpy imposes some additional restrictions on how the data inside is organized
+
+```{python}
+# to install: pip install numpy 
+import numpy as np #np is called alias and is standard way of calling libraries in Python 
+```
+
+```{python}
+x_1d = np.array([1, 2, 3])
+print(x_1d)
+```
+
+This is one dimensional array as a list number and you can do all the slicing and indexing operations as we previously saw.
+
+```{python}
+print(x_1d[0])
+print(x_1d[0:2])
+print(x_1d[0:3] == x_1d[:])
+```
+
+`NumPy` arrays act like mathematical vectors and matrices: + and \* perform component-wise addition or multiplication.
+
+```{python}
+x, y = np.array([1, 2, 3]), np.array([4, 5, 6])
+print(x, y)
+print(x + 10) # Add 10 to each entry of x.
+print(x * 4) # Multiply each entry of x by 4.
+x + y
+```
+
+**Example**: Write a function that defines the following matrix as NumPy array and return $-A^3+9A^2-15A$
+
+```{python}
+A=[
+  [3,1,4],
+  [1,5,9],
+  [-5,3,1]
+]
+print(A)
+
+# To print A matrix in a nice form you can use for loops(of course there are many ways to do it with packages)
+for row in A:
+  print(row)
+```
+
+```{python}
+import numpy as np
+def function_numpy(A):
+  A_1 = [row for row in A] 
+  A_2 = np.array(A_1)
+  return(-A_2**3+9*A_2**2-15*A_2)
+
+function_numpy(A)
+```
+
+`NumPy` has several attributes, some of which are listed below.
+
+| Attribute | Description                                                |
+|-----------|------------------------------------------------------------|
+| dtype     | The type of the elements in the array.                     |
+| ndim      | The number of axes (dimensions) of the array.              |
+| shape     | A tuple of integers indicating the size in each dimension. |
+| size      | The total number of elements in the array.                 |
+
+: *`NumPy`* attributes
+
+***Examples***
+```{python}
+# Create an array of the first seven integers 
+np.arange(7)
+# Create an array of floats from 1 to 12
+np.arange(1.,13.)
+# Create an array of values between 0 and 20, stepping by 2
+np.arange(0,20,2)
+```
+
+For plotting `NumPy` arrays, we can use `Matplotlib` package the main visualization package for **`Python`**.
+
+``` {python}
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# Step 1
+fig, ax = plt.subplots()
+
+# Step 2
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+# Step 3
+ax.plot(x, y)
+
+```
+
+More advanved plot
+
+```{python}
+
+N = 50
+
+np.random.seed(42)
+
+x = np.random.rand(N)
+y = np.random.rand(N)
+colors = np.random.rand(N)
+area = np.pi * (15 * np.random.rand(N))**2  # 0 to 15 point radii
+
+fig, ax = plt.subplots()
+
+ax.scatter(x, y, s=area, c=colors, alpha=0.5)
+
+ax.annotate(
+    "First point", xy=(x[0], y[0]), xycoords="data",
+    xytext=(25, -25), textcoords="offset points",
+    arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=0.6")
+)
+```
+
+## Data Wrangling with Pandas
+`Pandas` is at the top of the "scientific stack", because it allows data to be imported, manipulated and exported so easily. In contrast, NumPy supports the bottom of the stack with fundamental infrastructure for array operations, mathematical calculations, and random number generation.
+
+`Pandas` is a Python package providing fast, flexible, and expressive data structures designed to work with relational or labeled data both. It is a fundamental high-level building block for doing practical, real world data analysis in Python.
+
+Pandas is well suited for:
+
++ Tabular data with heterogeneously-typed columns, as in an SQL table or Excel spreadsheet
++ Ordered and unordered (not necessarily fixed-frequency) time series data.
++ Arbitrary matrix data (homogeneously typed or heterogeneous) with row and column labels
++ Any other form of observational / statistical data sets. The data actually need not be labeled at all to be placed into a pandas data structure
+
+### key Features of Pandas
+
++ Easy handling of missing data
++ Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
++ Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the data can be aligned automatically
++ Powerful, flexible group by functionality to perform split-apply-combine operations on data sets
++ Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
++ Intuitive merging and joining data sets
++ Flexible reshaping and pivoting of data sets
++ Hierarchical labeling of axes
++ Robust IO tools for loading data from flat files, Excel files, databases, and HDF5
++ Time series functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
+
+``` {python}
+# To install use !pip install pandas -U
+import pandas as pd
+```
+
