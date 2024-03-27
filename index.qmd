@@ -256,7 +256,7 @@ fib(2)
 
 ### Example from economics
 
-Production functions are valuable tools for representing the economic activities of firms generating goods or the total output within an economy. Despite using the term "function" in a mathematical context, we will closely link the conceptualization of mathematical functions with the implementation of Python functions. 
+Production functions are valuable tools for representing the economic activities of firms generating goods or the total output within an economy. Despite using the term "function" in a mathematical context, we will closely link the conceptualization of mathematical functions with the implementation of Python functions.
 $$
 Y=F(K,L)
 $$
@@ -283,7 +283,6 @@ def cobb_douglas(K,L):
 ```
 
 Now we can use this function and do the computations as fellow:
-
 
 ```{python}
 cobb_douglas(1.0,0.5)
@@ -462,6 +461,7 @@ function_numpy(A)
 : *`NumPy`* attributes
 
 ***Examples***
+
 ```{python}
 # Create an array of the first seven integers 
 np.arange(7)
@@ -473,7 +473,7 @@ np.arange(0,20,2)
 
 For plotting `NumPy` arrays, we can use `Matplotlib` package the main visualization package for **`Python`**.
 
-``` {python}
+```{python}
 import matplotlib.pyplot as plt
 %matplotlib inline
 
@@ -514,43 +514,41 @@ ax.annotate(
 ```
 
 ## Data Wrangling with Pandas
+
 `Pandas` is at the top of the "scientific stack", because it allows data to be imported, manipulated and exported so easily. In contrast, NumPy supports the bottom of the stack with fundamental infrastructure for array operations, mathematical calculations, and random number generation.
 
 `Pandas` is a Python package providing fast, flexible, and expressive data structures designed to work with relational or labeled data both. It is a fundamental high-level building block for doing practical, real world data analysis in Python.
 
 Pandas is well suited for:
 
-+ Tabular data with heterogeneously-typed columns, as in an SQL table or Excel spreadsheet
-+ Ordered and unordered (not necessarily fixed-frequency) time series data.
-+ Arbitrary matrix data (homogeneously typed or heterogeneous) with row and column labels
-+ Any other form of observational / statistical data sets. The data actually need not be labeled at all to be placed into a pandas data structure
+-   Tabular data with heterogeneously-typed columns, as in an SQL table or Excel spreadsheet
+-   Ordered and unordered (not necessarily fixed-frequency) time series data.
+-   Arbitrary matrix data (homogeneously typed or heterogeneous) with row and column labels
+-   Any other form of observational / statistical data sets. The data actually need not be labeled at all to be placed into a pandas data structure
 
 ### key Features of Pandas
 
-+ Easy handling of missing data
-+ Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
-+ Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the data can be aligned automatically
-+ Powerful, flexible group by functionality to perform split-apply-combine operations on data sets
-+ Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
-+ Intuitive merging and joining data sets
-+ Flexible reshaping and pivoting of data sets
-+ Hierarchical labeling of axes
-+ Robust IO tools for loading data from flat files, Excel files, databases, and HDF5
-+ Time series functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
+-   Easy handling of missing data
+-   Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
+-   Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the data can be aligned automatically
+-   Powerful, flexible group by functionality to perform split-apply-combine operations on data sets
+-   Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
+-   Intuitive merging and joining data sets
+-   Flexible reshaping and pivoting of data sets
+-   Hierarchical labeling of axes
+-   Robust IO tools for loading data from flat files, Excel files, databases, and HDF5
+-   Time series functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
 
-``` {python}
+```{python}
 # To install use !pip install pandas -U
 import pandas as pd
 ```
 
 ### Pandas Data Structures
+
 #### Series
-The first pandas data structure is a Series. A Series is a one-dimensional array that can hold any
-datatype, similar to a ndarray. However, a Series has an index that gives a label to each entry.
-An index generally is used to label the data.
-Typically a Series contains information about one feature of the data. For example, the data
-in a Series might show a class’s grades on a test and the Index would indicate each student in the
-class. To initialize a Series, the first parameter is the data and the second is the index.
+
+The first pandas data structure is a Series. A Series is a one-dimensional array that can hold any datatype, similar to a ndarray. However, a Series has an index that gives a label to each entry. An index generally is used to label the data. Typically a Series contains information about one feature of the data. For example, the data in a Series might show a class’s grades on a test and the Index would indicate each student in the class. To initialize a Series, the first parameter is the data and the second is the index.
 
 ```{python}
 import pandas as pd
@@ -563,17 +561,20 @@ english #everytime you run you will get a different random numbers becuase of th
 ```
 
 We created a random series with labels(here names) which can be used to find the specific values like the following case
+
 ```{python}
 print(math['Eva']) 
 english['Alisha']
 ```
 
 Use `.index` to find the labels of the data
-``` {python}
+
+```{python}
 english.index
 ```
 
 ***Remember for loops!*** They can be utilized to identify students whose names ends with the letter A
+
 ```{python}
 a = [name.endswith('a') for name in english.index] #only shows true and false
 print(a) 
@@ -581,12 +582,10 @@ english[[name.endswith('a') for name in english.index]] #for extraction use this
 ```
 
 #### Dataframe
-The second key pandas data structure is a `DataFrame`. A `DataFrame` is a collection of multiple
-Series. It can be thought of as a 2-dimensional array, where each row is a separate datapoint and
-each column is a feature of the data. The rows are labeled with an index (as in a Series) and the
-columns are labeled in the attribute columns.
 
-``` {python}
+The second key pandas data structure is a `DataFrame`. A `DataFrame` is a collection of multiple Series. It can be thought of as a 2-dimensional array, where each row is a separate datapoint and each column is a feature of the data. The rows are labeled with an index (as in a Series) and the columns are labeled in the attribute columns.
+
+```{python}
 grades = pd.DataFrame({"Math": math, "English":english})
 grades
 ```
@@ -598,5 +597,84 @@ grades.columns
 ```{python}
 b = grades.dropna()
 b
+```
+
+Here is non-exhaustive list of `Pandas` functions for data reading, writing, manipulation and statistical operations.
+
+| Method            | Returns                                                 |
+|----------------|-------------------------------------------------------|
+| to_csv()          | Write the index and entries to a CSV file               |
+| read_csv()        | Read a csv and convert into a DataFrame                 |
+| to_json()         | Convert the object to a JSON string                     |
+| to_pickle()       | Serialize the object and store it in an external file   |
+| to_sql()          | Write the object data to an open SQL database           |
+| read_html()       | Read a table in an html page and convert to a DataFrame |
+| append()          | Concatenate two or more Series                          |
+| drop()            | Remove the entries with the specified label or labels   |
+| drop_duplicates() | Remove duplicate values                                 |
+| dropna()          | Drop null entries                                       |
+| fillna()          | Replace null entries with a specified value or strategy |
+| reindex()         | Replace the index                                       |
+| sample()          | Draw a random entry                                     |
+| shift()           | Shift the index                                         |
+| unique()          | Return unique values                                    |
+| abs()             | Object with absolute values taken (of numerical data)   |
+| idxmax()          | The index label of the maximum value                    |
+| idxmin()          | The index label of the minimum value                    |
+| count()           | The number of non-null entries                          |
+| cumprod()         | The cumulative product over an axis                     |
+| cumsum()          | The cumulative sum over an axis                         |
+| max()             | The maximum of the entries                              |
+| mean()            | The average of the entries                              |
+| median()          | The median of the entries                               |
+| min()             | The minimum of the entries                              |
+| mode()            | The most common element(s)                              |
+| prod()            | The product of the elements                             |
+| sum()             | The sum of the elements                                 |
+| var()             | The variance of the elements                            |
+
+: `Pandas` common functions
+
+**Example** 
+
+```{python Pandasexample}
+titanic = pd.read_csv("https://raw.githubusercontent.com/jorisvandenbossche/course-python-data/main/notebooks/data/titanic.csv")
+titanic.head()
+```
+
+```{python}
+titanic.columns
+```
+
+Use pandas, we can calculate:
+1. Age distrbution
+2. Survival rate by different sex groups as well as classes of titanic
+3. Records has the dataset (rows)
+4. Average fare by class
+5. Likelihood of young people to survive <=25
+
+```{python}
+titanic['Age'].hist()
+```
+
+
+```{python}
+titanic.groupby('Sex')['Survived'].mean()
+```
+
+```{python}
+titanic.groupby('Pclass')['Survived'].mean().plot.bar()
+```
+
+```{python}
+len(titanic)
+```
+
+```{python}
+titanic.groupby('Pclass')['Fare'].mean()
+```
+
+```{python}
+titanic[titanic['Age']<=25]['Survived'].mean() #Or you can make a new df and then calcualte the mean
 ```
 
