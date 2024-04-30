@@ -235,7 +235,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"warning":"true","results":"markup","fig-height":5,"output":"true","label":"","comment":"","fig-cap":"","out-height":"","classes":"","context":"interactive","message":"true","autorun":"","read-only":"false","out-width":"700px","dpi":72,"fig-width":7},"id":1,"code":"def cobb_douglas(K,L):\n  #create alpha and z\n  z=1\n  alpha=0.33\n  return z*K**alpha*L**(1-alpha)"}];
+globalThis.qpyodideCellDetails = [{"code":"def cobb_douglas(K,L):\n  #create alpha and z\n  z=1\n  alpha=0.33\n  return z*K**alpha*L**(1-alpha)","options":{"read-only":"false","dpi":72,"context":"interactive","results":"markup","output":"true","out-height":"","fig-cap":"","autorun":"","label":"","message":"true","warning":"true","classes":"","out-width":"700px","fig-width":7,"fig-height":5,"comment":""},"id":1}];
 
 
 </script>
@@ -559,6 +559,12 @@ window.Quarto = {
 <h1>Introduction</h1>
 <p>Economist widely used <strong><code>STATA</code></strong> for the last 30 years to analyse economic data. Whether they are researching school selection, minimum wage, GDP, or stock trends, Stata provides all the statistics, graphics, and data-management tools needed to pursue a broad range of economic questions.</p>
 <p><strong><code>Python</code></strong> is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as <code>C++</code> or <code>Java</code>. The language provides constructs intended to enable clear programs on both a small and large scale.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/python.png" class="img-fluid figure-img"></p>
+<figcaption>https://xkcd.com/353/</figcaption>
+</figure>
+</div>
 <p>The core philosophy of the language is summarized by the document “PEP 20 (The Zen of Python)” as:</p>
 <ul>
 <li>Beautiful is better than ugly</li>
@@ -622,7 +628,7 @@ window.Quarto = {
 <section id="python-scripts" class="level3">
 <h3 class="anchored" data-anchor-id="python-scripts">Python scripts</h3>
 <p>let’s start with the most basic code humans ever made:</p>
-<div id="592614f6" class="cell" data-execution_count="1">
+<div id="14585f2f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World!"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello </span><span class="ch">\n</span><span class="st"> World!"</span>) <span class="co">#save this script as a hello.py file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -636,31 +642,31 @@ hello
 <p>Bravo<iconify-icon inline="" icon="fluent-emoji:exploding-head" aria-label="Icon exploding-head from fluent-emoji Iconify.design set." title="Icon exploding-head from fluent-emoji Iconify.design set."></iconify-icon> you made your first <strong><code>Python</code></strong> program.</p>
 <section id="basics" class="level4">
 <h4 class="anchored" data-anchor-id="basics">Basics</h4>
-<div id="82d9dec0" class="cell" data-execution_count="2">
+<div id="919671e0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="op">+</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="112">
 <pre><code>10</code></pre>
 </div>
 </div>
-<div id="1461a226" class="cell" data-execution_count="3">
+<div id="24bad2a8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="op">-</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="113">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="188623e0" class="cell" data-execution_count="4">
+<div id="0299c0f3" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="op">/</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="114">
 <pre><code>5.0</code></pre>
 </div>
 </div>
-<div id="7aad1db2" class="cell" data-execution_count="5">
+<div id="9d8b3aad" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="op">+</span><span class="dv">4</span>)<span class="op">*</span><span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="115">
 <pre><code>30</code></pre>
 </div>
 </div>
-<div id="480ce2db" class="cell" data-execution_count="6">
+<div id="51a6ee22" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2024</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">"I love Pizza"</span></span>
@@ -671,14 +677,14 @@ I love Pizza</code></pre>
 </div>
 </div>
 <p>comment is made with the #. <strong><code>Python</code></strong> ignores everything in a line that follows a #. let’s practice making comments</p>
-<div id="8af7b945" class="cell" data-execution_count="7">
+<div id="54980422" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">26</span> <span class="co">#Assigned the value 26 to variable i</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">13</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we can add them</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>i<span class="op">+</span>j</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>j<span class="op">-</span>i</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>i<span class="op">/</span>j</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="117">
 <pre><code>2.0</code></pre>
 </div>
 </div>
@@ -686,7 +692,7 @@ I love Pizza</code></pre>
 <section id="strings" class="level4">
 <h4 class="anchored" data-anchor-id="strings">Strings</h4>
 <p>Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes (‘…’) or double quotes (“…”) with the same result.</p>
-<div id="9fcd247f" class="cell" data-execution_count="8">
+<div id="12853ade" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>FirstName <span class="op">=</span> <span class="st">" Ahmed"</span> <span class="co">#leave 1 space to make it fancy</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>LastName <span class="op">=</span> <span class="st">"Osman"</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>FullName <span class="op">=</span> LastName <span class="op">+</span> FirstName</span>
@@ -700,23 +706,23 @@ Osman Ahmed</code></pre>
 </div>
 </div>
 <p><code>len()</code> is a builtin function in python that returns the length of string.</p>
-<div id="bcd2e429" class="cell" data-execution_count="9">
+<div id="3483ee2f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(FullName))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>11</code></pre>
 </div>
 </div>
 <p>Two or more string literals (i.e.&nbsp;the ones enclosed between quotes) next to each other are automatically concatenated. This feature is particularly useful when you want to break long strings:</p>
-<div id="bad9a4d8" class="cell" data-execution_count="10">
+<div id="edf00dd5" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">"Ahmed"</span> <span class="st">" Osman"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="120">
 <pre><code>'Ahmed Osman'</code></pre>
 </div>
 </div>
 <p>Or add letters to form a word like the following:</p>
-<div id="d79e4b53" class="cell" data-execution_count="11">
+<div id="ef347a3f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">"A"</span><span class="op">+</span><span class="st">"h"</span><span class="op">+</span><span class="st">"m"</span><span class="op">+</span><span class="st">"e"</span><span class="op">+</span><span class="st">"d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="121">
 <pre><code>'Ahmed'</code></pre>
 </div>
 </div>
@@ -724,7 +730,7 @@ Osman Ahmed</code></pre>
 <section id="lists" class="level4">
 <h4 class="anchored" data-anchor-id="lists">Lists</h4>
 <p>Python includes various compound data types for grouping together other values. Among these, the list stands out as the most flexible. It is represented by square brackets enclosing comma-separated values (items). Lists can comprise items of varying types, although typically, items within a list share the same type.</p>
-<div id="25bb2e5e" class="cell" data-execution_count="12">
+<div id="6f642b55" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">12</span>]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(values))</span>
@@ -736,18 +742,18 @@ Osman Ahmed</code></pre>
 </div>
 </div>
 <p>Lists are a mutable type, i.e.&nbsp;it is possible to change their content:</p>
-<div id="89b3a3f8" class="cell" data-execution_count="13">
+<div id="c7eac6c6" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>values[<span class="dv">2</span>]<span class="op">=</span><span class="dv">100</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="123">
 <pre><code>[1, 5, 100, 9, 12]</code></pre>
 </div>
 </div>
 <p>You can also add new items at the end of the list, by using the append() method</p>
-<div id="4c7fe22a" class="cell" data-execution_count="14">
+<div id="9e407704" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>values.append(<span class="dv">15</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="124">
 <pre><code>[1, 5, 100, 9, 12, 15]</code></pre>
 </div>
 </div>
@@ -759,8 +765,8 @@ Osman Ahmed</code></pre>
 <section id="functions" class="level2">
 <h2 class="anchored" data-anchor-id="functions">Functions</h2>
 <p>The <strong><code>Python</code></strong> interpreter incorporates a variety of built-in functions that are consistently accessible. These functions are presented here in alphabetical order. You can use the help() function, for example help(abs), to access detailed information about a specific function.</p>
-<div id="6c09ef2e" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div id="779f81bb" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="125">
 <pre><code>'abs() aiter() all() any() anext() ascii() bin() bool() breakpoint() bytearray() bytes() callable() chr() classmethod() compile() complex() delattr() dict() dir() divmod() enumerate() eval() exec() filter() float() format() frozenset() getattr() globals() hasattr() hash() help() hex() id() input() int() isinstance() issubclass() iter() len() list() locals() map() max() memoryview() min() next() object() oct() open() ord() pow() print() property() range() repr() reversed() round() set() setattr() slice() sorted() staticmethod() str() sum() super() tuple() type() vars() zip() __import__()'</code></pre>
 </div>
 </div>
@@ -773,7 +779,7 @@ Osman Ahmed</code></pre>
 <li>The following lines should be one or more paragraphs describing the object’s calling conventions, its side effects, etc.</li>
 </ul></li>
 </ul>
-<div id="f3a09487" class="cell" data-execution_count="16">
+<div id="04a5ce79" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 0, 1, 1, 2, 3, 5,</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):    <span class="co"># write Fibonacci series up to n</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Print a Fibonacci series up to n.</span></span>
@@ -787,7 +793,7 @@ Osman Ahmed</code></pre>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  better than print(a), why?</span></span>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> b, a<span class="op">+</span>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="81f0edcc" class="cell" data-execution_count="17">
+<div id="5e483cc5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(fib)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function fib in module __main__:
@@ -800,21 +806,21 @@ fib(n)
 </code></pre>
 </div>
 </div>
-<div id="e5a5fcd3" class="cell" data-execution_count="18">
+<div id="9f283ee2" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fib(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0 1 1 2 3 </code></pre>
 </div>
 </div>
 <p>Generally Functions are structured like:</p>
-<div id="4e0f1e9d" class="cell" data-execution_count="19">
+<div id="f22e500e" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(inputs):</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># step 1</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># step 2</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> outputs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dc5ec9f9" class="cell" data-execution_count="20">
+<div id="9c6956d4" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mean(numbers):</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(numbers)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> <span class="bu">len</span>(numbers)</span>
@@ -829,7 +835,7 @@ fib(n)
 </div>
 </div>
 <p>If we save the function to a file named mycollections.py, we could import the function as follows:</p>
-<div id="d3c027fd" class="cell" data-execution_count="21">
+<div id="191ef736" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mycollections</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>mycollections.fib(<span class="dv">200</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -854,7 +860,7 @@ Y=zK^\alpha L^{1-\alpha}
 <li>A value <span class="math inline">\(z\)</span> called the <strong>Total Factor Productivity (TFP)</strong>.</li>
 </ul>
 <p>Now let’s define the Cobb-Douglas function which computes the output production with parameters <span class="math inline">\(z\)</span>=1 and <span class="math inline">\(\alpha\)</span>=0.33 and takes the input <span class="math inline">\(K\)</span> and <span class="math inline">\(L\)</span>:</p>
-<div id="94a8ed4c" class="cell" data-execution_count="22">
+<div id="97e14a54" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobb_douglas(K,L):</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#create alpha and z</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  z<span class="op">=</span><span class="dv">1</span></span>
@@ -862,9 +868,9 @@ Y=zK^\alpha L^{1-\alpha}
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> z<span class="op">*</span>K<span class="op">**</span>alpha<span class="op">*</span>L<span class="op">**</span>(<span class="dv">1</span><span class="op">-</span>alpha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can use this function and do the computations as fellow:</p>
-<div id="99626a95" class="cell" data-execution_count="23">
+<div id="cb2f923d" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>cobb_douglas(<span class="fl">1.0</span>,<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="133">
 <pre><code>0.6285066872609142</code></pre>
 </div>
 </div>
@@ -876,7 +882,7 @@ Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p><strong>Solution</strong>:</p>
-<div id="24b70a60" class="cell" data-execution_count="24">
+<div id="7c3d2415" class="cell" data-execution_count="24">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ratio_CD (K, L, gamma):</span>
@@ -902,7 +908,7 @@ Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
 <li><strong>Recursion</strong> –&gt; a programming technique where a function calls itself to solve a problem by breaking it down into smaller instances of the same problem.</li>
 </ul>
 <p>Before jumping into iteration let’s see how the if statements are computes in <strong><code>Python</code></strong>.</p>
-<div id="919b8545" class="cell" data-execution_count="25">
+<div id="e49ae366" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if condition</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run when condition is True</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co">#else</span></span>
@@ -916,7 +922,7 @@ Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
 </div>
 </div>
 <p>Suppose we wanted to print out the first 10 integers and their squares. we could do somethings like this.</p>
-<div id="e78b78e5" class="cell" data-execution_count="26">
+<div id="eb3a3911" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"1**2=</span><span class="sc">{</span><span class="dv">1</span><span class="op">**</span><span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"2**2=</span><span class="sc">{</span><span class="dv">2</span><span class="op">**</span><span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"3**2=</span><span class="sc">{</span><span class="dv">3</span><span class="op">**</span><span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span>
@@ -933,7 +939,7 @@ Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
 </div>
 </div>
 <p>For loops can the same and with less coding efforts.</p>
-<div id="42589c4b" class="cell" data-execution_count="27">
+<div id="9d22dcc6" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>):</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">**2=</span><span class="sc">{</span>i<span class="op">**</span><span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -949,7 +955,7 @@ Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
 10**2=100</code></pre>
 </div>
 </div>
-<div id="d9ce9abc" class="cell" data-execution_count="28">
+<div id="8e804e1c" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for item in iterable:</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># operation 1 with item</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>   <span class="co"># operation 2 with item</span></span>
@@ -957,7 +963,7 @@ Y_2=F(K_2,L_2)=F(\gamma K_1,\gamma L_1)
 <span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>   <span class="co"># operation N with item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>While loops:</p>
-<div id="6600cea4" class="cell" data-execution_count="29">
+<div id="ec2299b8" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
@@ -971,7 +977,7 @@ done</code></pre>
 </div>
 </div>
 <p>Suppose we wanted to know the smallest <code>N</code> such that <span class="math inline">\(\sum_{i=0}^{N}{i&gt;1000}\)</span></p>
-<div id="359866a1" class="cell" data-execution_count="30">
+<div id="c01322b7" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> total <span class="op">&lt;=</span> <span class="dv">1000</span>:</span>
@@ -991,11 +997,11 @@ done</code></pre>
 <section id="numpy-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="numpy-arrays">NumPy Arrays</h2>
 <p><em><code>NumPy</code></em> is a powerful Python package for manipulating data with multi-dimensional vectors. Its versatility and speed makes Python an ideal language for applied and computational mathematics. <em><code>NumPy</code></em>’s core contribution is a new data-type called an <em>array</em>. An array is similar to a list, but numpy imposes some additional restrictions on how the data inside is organized</p>
-<div id="51c5d128" class="cell" data-execution_count="31">
+<div id="be27aa22" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to install: pip install numpy </span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co">#np is called alias and is standard way of calling libraries in Python </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2b368f4e" class="cell" data-execution_count="32">
+<div id="0d5723fd" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>x_1d <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x_1d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1003,7 +1009,7 @@ done</code></pre>
 </div>
 </div>
 <p>This is one dimensional array as a list number and you can do all the slicing and indexing operations as we previously saw.</p>
-<div id="a93cec0d" class="cell" data-execution_count="33">
+<div id="e67604a5" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x_1d[<span class="dv">0</span>])</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x_1d[<span class="dv">0</span>:<span class="dv">2</span>])</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x_1d[<span class="dv">0</span>:<span class="dv">3</span>] <span class="op">==</span> x_1d[:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1014,7 +1020,7 @@ done</code></pre>
 </div>
 </div>
 <p><code>NumPy</code> arrays act like mathematical vectors and matrices: + and * perform component-wise addition or multiplication.</p>
-<div id="242249d4" class="cell" data-execution_count="34">
+<div id="d7ccaa4f" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]), np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, y)</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">+</span> <span class="dv">10</span>) <span class="co"># Add 10 to each entry of x.</span></span>
@@ -1025,12 +1031,12 @@ done</code></pre>
 [11 12 13]
 [ 4  8 12]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display" data-execution_count="144">
 <pre><code>array([5, 7, 9])</code></pre>
 </div>
 </div>
 <p><strong>Example</strong>: Write a function that defines the following matrix as NumPy array and return <span class="math inline">\(-A^3+9A^2-15A\)</span></p>
-<div id="bb3e6aa5" class="cell" data-execution_count="35">
+<div id="750a6c9b" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">=</span>[</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">4</span>],</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">9</span>],</span>
@@ -1048,7 +1054,7 @@ done</code></pre>
 [-5, 3, 1]</code></pre>
 </div>
 </div>
-<div id="459ae7b4" class="cell" data-execution_count="36">
+<div id="0d18543e" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_numpy(A):</span>
 <span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  A_1 <span class="op">=</span> [row <span class="cf">for</span> row <span class="kw">in</span> A] </span>
@@ -1056,7 +1062,7 @@ done</code></pre>
 <span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span>(<span class="op">-</span>A_2<span class="op">**</span><span class="dv">3</span><span class="op">+</span><span class="dv">9</span><span class="op">*</span>A_2<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">15</span><span class="op">*</span>A_2)</span>
 <span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>function_numpy(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="146">
 <pre><code>array([[   9,   -7,   20],
        [  -7,   25, -135],
        [ 425,    9,   -7]])</code></pre>
@@ -1095,19 +1101,19 @@ done</code></pre>
 </tbody>
 </table>
 <p><strong><em>Examples</em></strong></p>
-<div id="0cbff012" class="cell" data-execution_count="37">
+<div id="8bc01c99" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an array of the first seven integers </span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">7</span>)</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an array of floats from 1 to 12</span></span>
 <span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="fl">1.</span>,<span class="fl">13.</span>)</span>
 <span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an array of values between 0 and 20, stepping by 2</span></span>
 <span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">0</span>,<span class="dv">20</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="147">
 <pre><code>array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])</code></pre>
 </div>
 </div>
 <p>For plotting <code>NumPy</code> arrays, we can use <code>Matplotlib</code> package the main visualization package for <strong><code>Python</code></strong>.</p>
-<div id="f14ea543" class="cell" data-execution_count="38">
+<div id="6d8c8b84" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1129,7 +1135,7 @@ done</code></pre>
 </div>
 </div>
 <p>More advanved plot</p>
-<div id="d43ade42" class="cell" data-execution_count="39">
+<div id="83ae02c6" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">50</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
@@ -1144,12 +1150,12 @@ done</code></pre>
 <span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>ax.scatter(x, y, s<span class="op">=</span>area, c<span class="op">=</span>colors, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
-<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"First point"</span>, xy<span class="op">=</span>(x[<span class="dv">0</span>], y[<span class="dv">0</span>]), xycoords<span class="op">=</span><span class="st">"data"</span>,</span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Starting point"</span>, xy<span class="op">=</span>(x[<span class="dv">0</span>], y[<span class="dv">0</span>]), xycoords<span class="op">=</span><span class="st">"data"</span>,</span>
 <span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="dv">25</span>, <span class="op">-</span><span class="dv">25</span>), textcoords<span class="op">=</span><span class="st">"offset points"</span>,</span>
 <span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a>    arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, connectionstyle<span class="op">=</span><span class="st">"arc3,rad=0.6"</span>)</span>
 <span id="cb72-18"><a href="#cb72-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>Text(25, -25, 'First point')</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="149">
+<pre><code>Text(25, -25, 'Starting point')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1185,7 +1191,7 @@ done</code></pre>
 <li>Robust IO tools for loading data from flat files, Excel files, databases, and HDF5</li>
 <li>Time series functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.</li>
 </ul>
-<div id="860a4bce" class="cell" data-execution_count="40">
+<div id="12451ffe" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To install use !pip install pandas -U</span></span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1195,7 +1201,7 @@ done</code></pre>
 <section id="series" class="level4">
 <h4 class="anchored" data-anchor-id="series">Series</h4>
 <p>The first pandas data structure is a Series. A Series is a one-dimensional array that can hold any datatype, similar to a ndarray. However, a Series has an index that gives a label to each entry. An index generally is used to label the data. Typically a Series contains information about one feature of the data. For example, the data in a Series might show a class’s grades on a test and the Index would indicate each student in the class. To initialize a Series, the first parameter is the data and the second is the index.</p>
-<div id="e3d38b3b" class="cell" data-execution_count="41">
+<div id="341b6741" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="co"># let's initialize Series of student grades</span></span>
@@ -1210,7 +1216,7 @@ Joseph    71
 Eva       35
 dtype: int32 /n</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="151">
 <pre><code>Alisha    37
 Monica    83
 Yusuf     98
@@ -1220,32 +1226,32 @@ dtype: int32</code></pre>
 </div>
 </div>
 <p>We created a random series with labels(here names) which can be used to find the specific values like the following case</p>
-<div id="74be9da5" class="cell" data-execution_count="42">
+<div id="8af976c2" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math[<span class="st">'Eva'</span>]) </span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>english[<span class="st">'Alisha'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>35</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="152">
 <pre><code>37</code></pre>
 </div>
 </div>
 <p>Use <code>.index</code> to find the labels of the data</p>
-<div id="72bea33d" class="cell" data-execution_count="43">
+<div id="47de28e4" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>english.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="153">
 <pre><code>Index(['Alisha', 'Monica', 'Yusuf', 'Eva', 'Gia'], dtype='object')</code></pre>
 </div>
 </div>
 <p><strong><em>Remember for loops!</em></strong> They can be utilized to identify students whose names ends with the letter A</p>
-<div id="b9e44223" class="cell" data-execution_count="44">
+<div id="b52ecf8d" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [name.endswith(<span class="st">'a'</span>) <span class="cf">for</span> name <span class="kw">in</span> english.index] <span class="co">#only shows true and false</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a) </span>
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>english[[name.endswith(<span class="st">'a'</span>) <span class="cf">for</span> name <span class="kw">in</span> english.index]] <span class="co">#for extraction use this one</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[True, True, False, True, True]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="154">
 <pre><code>Alisha    37
 Monica    83
 Eva       88
@@ -1257,10 +1263,10 @@ dtype: int32</code></pre>
 <section id="dataframe" class="level4">
 <h4 class="anchored" data-anchor-id="dataframe">Dataframe</h4>
 <p>The second key pandas data structure is a <code>DataFrame</code>. A <code>DataFrame</code> is a collection of multiple Series. It can be thought of as a 2-dimensional array, where each row is a separate datapoint and each column is a feature of the data. The rows are labeled with an index (as in a Series) and the columns are labeled in the attribute columns.</p>
-<div id="51ad4a97" class="cell" data-execution_count="45">
+<div id="53cbcd59" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> pd.DataFrame({<span class="st">"Math"</span>: math, <span class="st">"English"</span>:english})</span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>grades</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="155">
 <div>
 <div>
 
@@ -1311,16 +1317,16 @@ dtype: int32</code></pre>
 </div>
 </div>
 </div>
-<div id="c9d10c14" class="cell" data-execution_count="46">
+<div id="22bb0f4e" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>grades.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="156">
 <pre><code>Index(['Math', 'English'], dtype='object')</code></pre>
 </div>
 </div>
-<div id="96c84d2f" class="cell" data-execution_count="47">
+<div id="c9aeab53" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> grades.dropna()</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="47">
+<div class="cell-output cell-output-display" data-execution_count="157">
 <div>
 <div>
 
@@ -1360,8 +1366,8 @@ dtype: int32</code></pre>
 <table class="table">
 <caption><code>Pandas</code> common functions</caption>
 <colgroup>
-<col style="width: 22%">
-<col style="width: 77%">
+<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1489,10 +1495,10 @@ dtype: int32</code></pre>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div id="29fc3dc8" class="cell" data-execution_count="48">
+<div id="9184813e" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>titanic <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/jorisvandenbossche/course-python-data/main/notebooks/data/titanic.csv"</span>)</span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>titanic.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="48">
+<div class="cell-output cell-output-display" data-execution_count="158">
 <div>
 <div>
 
@@ -1598,16 +1604,23 @@ dtype: int32</code></pre>
 </div>
 </div>
 </div>
-<div id="547d4301" class="cell" data-execution_count="49">
+<div id="97bb8c32" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>titanic.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="159">
 <pre><code>Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
        'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'],
       dtype='object')</code></pre>
 </div>
 </div>
-<p>Use pandas, we can calculate: 1. Age distrbution 2. Survival rate by different sex groups as well as classes of titanic 3. Records has the dataset (rows) 4. Average fare by class 5. Likelihood of young people to survive &lt;=25</p>
-<div id="f20d864a" class="cell" data-execution_count="50">
+<p>Use pandas, we can calculate:</p>
+<ol type="1">
+<li>Age distrbution</li>
+<li>Survival rate by different sex groups as well as classes of titanic</li>
+<li>Records has the dataset (rows)</li>
+<li>Average fare by class</li>
+<li>Likelihood of young people to survive &lt;=25</li>
+</ol>
+<div id="5ca9b1cd" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>titanic[<span class="st">'Age'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1617,16 +1630,16 @@ dtype: int32</code></pre>
 </div>
 </div>
 </div>
-<div id="58adba3f" class="cell" data-execution_count="51">
+<div id="251f3092" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>titanic.groupby(<span class="st">'Sex'</span>)[<span class="st">'Survived'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display" data-execution_count="161">
 <pre><code>Sex
 female    0.742038
 male      0.188908
 Name: Survived, dtype: float64</code></pre>
 </div>
 </div>
-<div id="c7523422" class="cell" data-execution_count="52">
+<div id="050224c2" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>titanic.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Survived'</span>].mean().plot.bar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1636,15 +1649,15 @@ Name: Survived, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div id="8faabce6" class="cell" data-execution_count="53">
+<div id="a004ac37" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(titanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="163">
 <pre><code>891</code></pre>
 </div>
 </div>
-<div id="312c9a95" class="cell" data-execution_count="54">
+<div id="4a1d8516" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>titanic.groupby(<span class="st">'Pclass'</span>)[<span class="st">'Fare'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="54">
+<div class="cell-output cell-output-display" data-execution_count="164">
 <pre><code>Pclass
 1    84.154687
 2    20.662183
@@ -1652,9 +1665,9 @@ Name: Survived, dtype: float64</code></pre>
 Name: Fare, dtype: float64</code></pre>
 </div>
 </div>
-<div id="1ff83ad3" class="cell" data-execution_count="55">
+<div id="8b465c4e" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>titanic[titanic[<span class="st">'Age'</span>]<span class="op">&lt;=</span><span class="dv">25</span>][<span class="st">'Survived'</span>].mean() <span class="co">#Or you can make a new df and then calcualte the mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="165">
 <pre><code>0.4119601328903654</code></pre>
 </div>
 </div>
